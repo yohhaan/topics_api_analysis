@@ -1,0 +1,3 @@
+[submodule "topics_classifier"]
+	path = topics_classifier
+	url = ../topics_classifier

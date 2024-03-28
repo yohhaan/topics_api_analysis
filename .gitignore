@@ -1,0 +1,7 @@
+**/__pycache__/
+*.tsv
+*.csv
+*.domains
+data/figs/
+data/denoise_exp*
+data/reidentification_exp*
