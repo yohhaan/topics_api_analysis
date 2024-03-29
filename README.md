@@ -1,6 +1,6 @@
 # topics_api_analysis
 
-This is the code artifact of the paper [A Public and Reproducible Assessment of the Topics API on Real Data](https://arxiv.org/abs/)
+This is the code artifact of the paper [A Public and Reproducible Assessment of the Topics API on Real Data](https://arxiv.org/abs/2403.19577)
 
 ```bibtex
 @inproceedings{topics_secweb24_beugin,
