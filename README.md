@@ -60,5 +60,5 @@ Examples:
 - `python3 topics_simulator.py data/web_data/users_topics_5_weeks.tsv 5 topics_classifier/chrome4/config.json data/crux/crux_202401_chrome4_topics-api.tsv 10 1 data/reidentification_exp/5_weeks_10_unobserved`
 - `python3 topics_simulator.py data/web_data/users_topics_5_weeks.tsv 5 topics_classifier/chrome4/config.json data/crux/crux_202401_chrome4_topics-api.tsv 10 100 data/denoise_exp/5_weeks_100_repetitions_10_unobserved`
 
-**Analysis:** to extract statistics and plots the figures, refer to the
+**Analysis:** to extract statistics and plot the figures, refer to the
 [`analysis.py`](analysis.py) script.
