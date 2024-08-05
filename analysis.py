@@ -265,16 +265,16 @@ def load_override_list(override_list_path: str) -> None:
 
 
 if __name__ == "__main__":
-    taxonomy = pd.read_csv("topics_classifier/chrome4/taxonomy.tsv", sep="\t")
+    taxonomy = pd.read_csv("topics_classifier/chrome5/taxonomy.tsv", sep="\t")
 
     ## Distributions
-    crux = pd.read_csv("data/crux/crux_202401_chrome4_topics-api.tsv", sep="\t")
+    crux = pd.read_csv("data/crux/crux_202406_chrome5_topics-api.tsv", sep="\t")
     cdf_domains_per_topic(crux, taxonomy, "data/figs/crux")
-    tranco = pd.read_csv("data/tranco/tranco_6JZJX_chrome4_topics-api.tsv", sep="\t")
+    tranco = pd.read_csv("data/tranco/tranco_G6KQK_chrome5_topics-api.tsv", sep="\t")
     cdf_domains_per_topic(tranco, taxonomy, "data/figs/tranco")
-    web_data = pd.read_csv("data/web_data/web_data_chrome4_topics-api.tsv", sep="\t")
+    web_data = pd.read_csv("data/web_data/web_data_chrome5_topics-api.tsv", sep="\t")
     cdf_domains_per_topic(web_data, taxonomy, "data/figs/web_data")
-    override = load_override_list("topics_classifier/chrome4/override_list.tsv")
+    override = load_override_list("topics_classifier/chrome5/override_list.tsv")
     cdf_domains_per_topic(override, taxonomy, "data/figs/override")
 
     ## Stats
@@ -286,7 +286,7 @@ if __name__ == "__main__":
     )
     extract_stats(df_users_topics, nb_epochs, df_browsing)
 
-    ## Reidentificaiton experiment
+    ## Reidentification experiment
     nb_epochs = 5
     plot_cdf_size_reidentified_groups(
         "data/reidentification_exp/" + str(nb_epochs) + "_weeks_10_unobserved",

@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # Edit version - type of classification here
-crux_version=202401
-model_version=chrome4
+crux_version=202406
+model_version=chrome5
 classification_type=topics-api
 
 # Variables

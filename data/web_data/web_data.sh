@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Edit version - type of classification here
-model_version=chrome4
+model_version=chrome5
 classification_type=topics-api
 nb_epochs=5
 
@@ -36,8 +36,6 @@ then
     parallel -X --bar -N 1000 -a $domains_path -I @@ "python3 ../../topics_classifier/classify.py -mv $model_version -ct $classification_type -i @@ >> $classified_path"
 fi
 
-#users profiles not generated
-if [ ! -f $users_topics_epochs ]
-then
-    python3 create_topics_profiles.py $classified_path $csv_path $epochs_json ../../topics_classifier/$model_version/config.json $users_topics_epochs
-fi
+#generate users profiles
+python3 create_topics_profiles.py $classified_path $csv_path $epochs_json ../../topics_classifier/$model_version/config.json $users_topics_epochs
+

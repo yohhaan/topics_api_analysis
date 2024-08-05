@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # Edit version - type of classification here
-tranco_version=6JZJX
-model_version=chrome4
+tranco_version=G6KQK
+model_version=chrome5
 classification_type=topics-api
 
 # Variables

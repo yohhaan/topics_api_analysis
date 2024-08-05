@@ -2,9 +2,12 @@ import numpy as np
 import pandas as pd
 from multiprocessing import Pool
 from itertools import repeat
+import os
 
+# force reseed (https://stackoverflow.com/questions/12915177/same-output-in-different-workers-in-multiprocessing)
+os.register_at_fork(after_in_child=np.random.seed)
 
-def topics_call(top5, taxonomy_ids, p=0.05):
+def topics_call(top_topics, taxonomy_ids, p=0.05):
     """Simulate a call to TOPICS API one-shot and multi-shot
     for multi-shot: pass output (topics + ground trtuh) of previous epoch,
     returned array is not shuffled randomly to make it easier to keep track for
@@ -15,7 +18,7 @@ def topics_call(top5, taxonomy_ids, p=0.05):
         topic = np.random.choice(taxonomy_ids, 1)[0]
         ground_truth = 0  # noisy
     else:
-        topic = np.random.choice(top5, 1)[0]
+        topic = np.random.choice(top_topics, 1)[0]
         ground_truth = 1  # genuine
     return topic, ground_truth
 
@@ -399,7 +402,6 @@ def reidentification_exp_specific_epoch(
         view_b.append(user.b_observed_topics[epoch_index])
         for topic in view_b[-1]:
             reidentification_dict[topic].append(user.id)
-
     with Pool() as pool:
         results = pool.starmap(
             reidentification_exp_pool_function,

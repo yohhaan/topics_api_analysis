@@ -99,13 +99,22 @@ def create_users(df_users_topics, nb_epochs, taxonomy_ids, T, repeat_each_user_n
         topT_epochs = []
         for epoch in range(nb_epochs):
             topT = df_user[df_user["epoch_id"] == epoch]["topic"].tolist()
+
+            # if topT is not size T, the spec says that we pad with random
+            # topics from the taxonomy. However, and because of the witness
+            # requirement, these random topics will never get returned to third
+            # parties that have not observed them.
+
+            # Thus commenting out following lines of code:
+            # if len(topT) != T:
             # check if correct size, if not draw randomly from taxonomy
-            if len(topT) != T:
-                possible_choices = list(set(taxonomy_ids).difference(topT))
-                for topic in np.random.choice(
-                    possible_choices, T - len(topT), replace=False
-                ):
-                    topT.append(topic)
+            #     possible_choices = list(set(taxonomy_ids).difference(topT))
+            #     for topic in np.random.choice(
+            #         possible_choices, T - len(topT), replace=False
+            #     ):
+            #         topT.append(topic)
+
+
             # append to matrix, order topics according to id
             topT_epochs.append(np.sort(topT))
         for _ in range(repeat_each_user_n_times):
