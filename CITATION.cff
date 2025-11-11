@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+title: Topics API Analysis - SecWeb 2024
+message: "If you use this software, please cite both the associated paper (see preferred-citation) and the software itself."
+type: software
+authors:
+  - given-names: Yohan
+    family-names: Beugin
+    affiliation: University of Wisconsin–Madison
+    orcid: https://orcid.org/0000-0003-0991-7926
+license: "GPL-3.0-or-later"
+version: 1.0.0
+date-released: "2024-03-24"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.17584008
+    description: "The concept DOI that represent all versions and will always resolve to the latest one"
+  - type: doi
+    value: 10.5281/zenodo.17584009
+    description: "The versioned DOI for the version 1.0.0 of the classifier"
+repository-code: https://github.com/yohhaan/topics_api_analysis
+url: https://privacysandstorm.github.io
+abstract: This is the code artifact of the paper "A Public and Reproducible Assessment of the Topics API on Real Data"
+preferred-citation:
+  title: A Public and Reproducible Assessment of the Topics API on Real Data
+  type: conference-paper
+  authors:
+    - given-names: Yohan
+      family-names: Beugin
+      affiliation: University of Wisconsin–Madison
+      orcid: https://orcid.org/0000-0003-0991-7926
+    - given-names: Patrick
+      family-names: McDaniel
+      affiliation: University of Wisconsin–Madison
+      orcid: https://orcid.org/0000-0003-2091-7484
+  collection-title: IEEE Security and Privacy Workshop on Designing Security for the Web (SecWeb)
+  year: 2024
+  month: 5
+  doi: https://doi.org/10.48550/arXiv.2403.19577
+keywords:
+  - Computer Science
+  - Privacy Sandbox
+  - Advertising
+  - Topics API
+  - Third-party Cookies

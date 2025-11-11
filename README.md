@@ -1,4 +1,5 @@
 # topics_api_analysis
+[![DOI](https://zenodo.org/badge/776812849.svg)](https://doi.org/10.5281/zenodo.17584008)
 
 This is the code artifact of the paper [A Public and Reproducible Assessment of the Topics API on Real Data](https://arxiv.org/abs/2403.19577)
 
